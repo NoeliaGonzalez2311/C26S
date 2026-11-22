@@ -1,0 +1,31 @@
+main .avatar {
+  width: 250px;
+  height: 250px;
+  display: block;
+  margin: 0 auto;
+}
+/* Estilos de las líneas separadoras de la estrella */
+.line {
+  width: 80px;
+  height: 2px;
+  background-color: #e0dfdf;
+}
+.redes a,
+redes a i {
+  color: white !important;
+}
+.social {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+/* cuando el tamaño sea del celular  */
+@media (max-width: 575.98px) {
+  .drawer .drawer-body {
+    justify-content: flex-start;
+  }
+  .drawer .navbar-nav {
+    margin-left: 0;
+    align-items: flex-start;
+  }
+}

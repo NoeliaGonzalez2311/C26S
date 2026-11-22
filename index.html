@@ -1,595 +1,549 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" data-bs-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio - Noelia Gonzalez</title>
+
+    <link href="./css/bootstrap.min.css" rel="stylesheet" />
+    <link href="./css/styles.css" rel="stylesheet" />
 
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/style.css" />
+
+    <title>Bootstrap 6.0 - Portafolio</title>
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark barra-portfolio">
-      <div class="container">
-        <a class="navbar-brand" href="#">NOELIA GONZALEZ</a>
+    <header>
+      <!-- Menú de navegación -->
+      <nav class="navbar sm:navbar-expand bg-1 fg-2">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            Noelia <span class="fw-bold">Gonzalez</span>
+          </a>
 
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#menuPortfolio"
-          aria-controls="menuPortfolio"
-          aria-expanded="false"
-          aria-label="Abrir menú"
-        >
-          <span>MENÚ</span>
-          <span class="navbar-toggler-icon"></span>
-        </button>
+          <button
+            class="btn-icon navbar-toggler"
+            type="button"
+            data-bs-toggle="drawer"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon" aria-hidden="true"></span>
+          </button>
 
-        <div class="collapse navbar-collapse" id="menuPortfolio">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#portfolio">PORTFOLIO</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#sobre-mi">SOBRE MÍ</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contacto">CONTACTO</a>
-            </li>
-          </ul>
+          <dialog
+            class="drawer drawer-end"
+            tabindex="-1"
+            id="navbarNav"
+            aria-labelledby="navbarNavLabel"
+          >
+            <div class="drawer-header">
+              <h5 class="drawer-title" id="navbarNavLabel">Menú</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="drawer"
+                aria-label="Close"
+              ></button>
+            </div>
+
+            <div class="drawer-body justify-content-end">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a
+                    class="nav-link active"
+                    aria-current="page"
+                    href="#portafolio"
+                    >Portafolio</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#sobre-mi">Sobre mí</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#contacto">Contacto</a>
+                </li>
+              </ul>
+            </div>
+          </dialog>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </header>
 
     <main>
-      <section class="presentacion text-center text-white py-5">
-        <div class="container">
-          <img
-            src="img/avataaars.svg"
-            alt="Mi avatar"
-            class="foto-perfil rounded-circle mb-4"
-          />
+      <!-- Sección nombre -->
+      <section class="d-flex flex-column align-items-center p-12">
+        <img
+          src="./img/avatar.png"
+          class="avatar img-fluid object-fit-contain"
+          alt="Avatar Noelia"
+        />
 
-          <h1 class="fw-bold">NOELIA GONZALEZ</h1>
+        <h1 class="pt-6">Noelia Gonzalez</h1>
 
-          <div
-            class="d-flex justify-content-center align-items-center gap-3 my-3"
-          >
-            <span class="linea"></span>
-            <span class="estrella">★</span>
-            <span class="linea"></span>
-          </div>
-
-          <p>Estudiante de Diseño Web - Creativa - Emprendedora</p>
+        <!-- Separador estrella -->
+        <div class="d-flex gap-3 align-items-center py-4">
+          <div class="line"></div>
+          <i class="fa-solid fa-star text-white"></i>
+          <div class="line"></div>
         </div>
+
+        <p>Desarrolladora Web Front End</p>
       </section>
 
-      <section id="portfolio" class="container text-center py-5">
-        <h2 class="fw-bold">PORTFOLIO</h2>
+      <!-- Sección portafolio -->
+      <section id="portafolio" class="bg-1 p-12">
+        <div class="d-flex flex-column align-items-center">
+          <h2>Portafolio</h2>
 
-        <div
-          class="d-flex justify-content-center align-items-center gap-3 mb-5"
-        >
-          <span class="linea linea-oscura"></span>
-          <span class="estrella estrella-oscura">★</span>
-          <span class="linea linea-oscura"></span>
+          <!-- Separador estrella -->
+          <div class="d-flex gap-3 align-items-center py-4">
+            <div class="line"></div>
+            <i class="fa-solid fa-star"></i>
+            <div class="line"></div>
+          </div>
         </div>
 
-        <div class="row g-4">
-          <div class="col-12 col-md-6 col-lg-4">
-            <div
-              class="card tarjeta-proyecto"
-              data-bs-toggle="modal"
-              data-bs-target="#modalLemonPie"
-            >
+        <!-- Grilla de proyectos -->
+        <div
+          class="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-10 justify-items-center"
+        >
+          <!-- CARD 1: Lemon Pie -->
+          <section
+            type="button"
+            class="card"
+            style="max-width: 320px"
+            data-bs-toggle="dialog"
+            data-bs-target="#lemonDialog"
+          >
+            <img
+              src="./img/lemon-pie.jpeg"
+              class="card-img-top"
+              alt="Lemon Pie"
+            />
+            <div class="card-body">
+              <h4 class="card-title text-center">Lemon Pie</h4>
+            </div>
+          </section>
+
+          <dialog class="dialog" id="lemonDialog">
+            <div class="dialog-header">
+              <h1 class="dialog-title">Lemon Pie</h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="dialog"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="dialog-body">
               <img
-                src="img/lemon-pie.jpeg"
-                class="card-img-top"
+                src="./img/lemon-pie.jpeg"
                 alt="Lemon Pie"
+                class="img-fluid"
               />
-              <h5>Lemon Pie</h5>
+              <p>Corresponde al trabajo de Lemon Pie</p>
             </div>
-          </div>
-
-          <div class="col-12 col-md-6 col-lg-4">
-            <div
-              class="card tarjeta-proyecto"
-              data-bs-toggle="modal"
-              data-bs-target="#modalBatman"
+            <a
+              type="button"
+              class="btn-outline theme-primary"
+              href="https://noeliagonzalez2311.github.io/C5S/"
+              target="_blank"
+              >Visitar sitio</a
             >
+          </dialog>
+
+          <!-- CARD 2: CV Batman -->
+          <section
+            type="button"
+            class="card"
+            style="max-width: 320px"
+            data-bs-toggle="dialog"
+            data-bs-target="#batmanDialog"
+          >
+            <img
+              src="./img/CVBatman.png"
+              class="card-img-top bg-white"
+              alt="CV Batman"
+            />
+            <div class="card-body">
+              <h4 class="card-title text-center">CV Batman</h4>
+            </div>
+          </section>
+
+          <dialog class="dialog" id="batmanDialog">
+            <div class="dialog-header">
+              <h1 class="dialog-title">CV Batman</h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="dialog"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="dialog-body">
+              <img src="./img/CVBatman.png" alt="CV Batman" class="img-fluid" />
+              <p>Corresponde al trabajo del CV de Batman</p>
+            </div>
+            <a
+              type="button"
+              class="btn-outline theme-primary"
+              href="https://noeliagonzalez2311.github.io/C22S-Sass-Batman/"
+              target="_blank"
+              >Visitar sitio</a
+            >
+          </dialog>
+
+          <!-- CARD 3: Súpers -->
+          <section
+            type="button"
+            class="card"
+            style="max-width: 320px"
+            data-bs-toggle="dialog"
+            data-bs-target="#superDialog"
+          >
+            <img
+              src="./img/super.png"
+              class="card-img-top bg-white"
+              alt="Súpers"
+            />
+            <div class="card-body">
+              <h4 class="card-title text-center">Súpers</h4>
+            </div>
+          </section>
+
+          <dialog class="dialog" id="superDialog">
+            <div class="dialog-header">
+              <h1 class="dialog-title">Súpers</h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="dialog"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="dialog-body">
+              <img src="./img/super.png" alt="Súpers" class="img-fluid" />
+              <p>Corresponde al trabajo de los superHeroes</p>
+            </div>
+            <a
+              type="button"
+              class="btn-outline theme-primary"
+              href="https://noeliagonzalez2311.github.io/C9S/"
+              target="_blank"
+              >Visitar sitio</a
+            >
+          </dialog>
+
+          <!-- CARD 4: Pet Shop -->
+          <section
+            type="button"
+            class="card"
+            style="max-width: 320px"
+            data-bs-toggle="dialog"
+            data-bs-target="#petshopDialog"
+          >
+            <img src="./img/petshop.jpeg" class="card-img-top" alt="Pet Shop" />
+            <div class="card-body">
+              <h4 class="card-title text-center">Pet Shop</h4>
+            </div>
+          </section>
+
+          <dialog class="dialog" id="petshopDialog">
+            <div class="dialog-header">
+              <h1 class="dialog-title">Pet Shop</h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="dialog"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="dialog-body">
+              <img src="./img/petshop.jpeg" alt="Pet Shop" class="img-fluid" />
+              <p>Corresponde al trabajo del petshop</p>
+            </div>
+            <a
+              type="button"
+              class="btn-outline theme-primary"
+              href="https://noeliagonzalez2311.github.io/Petshop_Integrador/"
+              target="_blank"
+              >Visitar sitio</a
+            >
+          </dialog>
+
+          <!-- CARD 5: Pizzería -->
+          <section
+            type="button"
+            class="card"
+            style="max-width: 320px"
+            data-bs-toggle="dialog"
+            data-bs-target="#pizzaDialog"
+          >
+            <img src="./img/piza.jpeg" class="card-img-top" alt="Pizzería" />
+            <div class="card-body">
+              <h4 class="card-title text-center">Pizzería</h4>
+            </div>
+          </section>
+
+          <dialog class="dialog" id="pizzaDialog">
+            <div class="dialog-header">
+              <h1 class="dialog-title">Pizzería</h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="dialog"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="dialog-body">
+              <img src="./img/piza.jpeg" alt="Pizzería" class="img-fluid" />
+              <p>Corresponde al trabajo de la Pizzeria</p>
+            </div>
+            <a
+              type="button"
+              class="btn-outline theme-primary"
+              href="https://noeliagonzalez2311.github.io/C11S-Flexbox/"
+              target="_blank"
+              >Visitar sitio</a
+            >
+          </dialog>
+
+          <!-- CARD 6: Game Shop -->
+          <section
+            type="button"
+            class="card"
+            style="max-width: 320px"
+            data-bs-toggle="dialog"
+            data-bs-target="#gameshopDialog"
+          >
+            <img
+              src="./img/gameshop.jpeg"
+              class="card-img-top"
+              alt="Game Shop"
+            />
+            <div class="card-body">
+              <h4 class="card-title text-center">Game Shop</h4>
+            </div>
+          </section>
+
+          <dialog class="dialog" id="gameshopDialog">
+            <div class="dialog-header">
+              <h1 class="dialog-title">Game Shop</h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="dialog"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="dialog-body">
               <img
-                src="img/CVBatman.png"
-                class="card-img-top"
-                alt="CV Batman"
-              />
-              <h5>CV Batman</h5>
-            </div>
-          </div>
-
-          <div class="col-12 col-md-6 col-lg-4">
-            <div
-              class="card tarjeta-proyecto"
-              data-bs-toggle="modal"
-              data-bs-target="#modalSupers"
-            >
-              <img src="img/super.png" class="card-img-top" alt="Súpers" />
-              <h5>Súpers</h5>
-            </div>
-          </div>
-
-          <div class="col-12 col-md-6 col-lg-4">
-            <div
-              class="card tarjeta-proyecto"
-              data-bs-toggle="modal"
-              data-bs-target="#modalPetShop"
-            >
-              <img src="img/petshop.jpeg" class="card-img-top" alt="Pet Shop" />
-              <h5>Pet Shop</h5>
-            </div>
-          </div>
-
-          <div class="col-12 col-md-6 col-lg-4">
-            <div
-              class="card tarjeta-proyecto"
-              data-bs-toggle="modal"
-              data-bs-target="#modalPizzeria"
-            >
-              <img src="img/piza.jpeg" class="card-img-top" alt="Pizzería" />
-              <h5>Pizzería</h5>
-            </div>
-          </div>
-
-          <div class="col-12 col-md-6 col-lg-4">
-            <div
-              class="card tarjeta-proyecto"
-              data-bs-toggle="modal"
-              data-bs-target="#modalGameShop"
-            >
-              <img
-                src="img/gameshop.jpeg"
-                class="card-img-top"
+                src="./img/gameshop.jpeg"
                 alt="Game Shop"
+                class="img-fluid"
               />
-              <h5>Game Shop</h5>
+              <p>Corresponde al trabajo del gameshop</p>
             </div>
-          </div>
+            <a
+              type="button"
+              class="btn-outline theme-primary"
+              href="https://noeliagonzalez2311.github.io/Simulacro_2doParcial/"
+              target="_blank"
+              >Visitar sitio</a
+            >
+          </dialog>
         </div>
       </section>
 
-      <section id="sobre-mi" class="sobre-mi text-white py-5">
+      <!-- Sección SOBRE MÍ -->
+      <section id="sobre-mi" class="p-12">
         <div class="container text-center">
-          <h2 class="fw-bold">SOBRE MÍ</h2>
+          <h2>Sobre Mi</h2>
 
+          <!-- Separador estrella -->
           <div
-            class="d-flex justify-content-center align-items-center gap-3 my-3"
+            class="d-flex gap-3 align-items-center justify-content-center py-4"
           >
-            <span class="linea"></span>
-            <span class="estrella">★</span>
-            <span class="linea"></span>
+            <div class="line"></div>
+            <i class="fa-solid fa-star fs-4"></i>
+            <div class="line"></div>
           </div>
 
-          <div class="row justify-content-center text-start mt-4">
-            <div class="col-12 col-md-4">
-              <p>
-                Soy estudiante y me interesa el diseño y desarrollo web. Me
-                gusta aprender nuevas herramientas y crear páginas que sean
-                atractivas, organizadas y fáciles de utilizar.
-              </p>
-            </div>
+          <div class="row text-start mb-6">
+            <p class="lg:col-6">
+              Soy estudiante y actualmente me estoy formando en desarrollo web.
+              Durante la cursada aprendí a utilizar HTML, CSS y Bootstrap para
+              crear páginas web.
+            </p>
 
-            <div class="col-12 col-md-4">
-              <p>
-                Durante mi formación trabajé con HTML, CSS, JavaScript, Sass y
-                Bootstrap. En este portfolio comparto algunos de los proyectos
-                que fui realizando durante la cursada.
-              </p>
-            </div>
+            <p class="lg:col-6">
+              Me considero una persona creativa, responsable y con muchas ganas
+              de seguir aprendiendo. Disfruto desarrollar proyectos y poner en
+              práctica los conocimientos adquiridos durante mi formación.
+            </p>
           </div>
 
-          <a
-            href="https://github.com/NoeliaGonzalez2311/C8S_CV"
-            class="btn btn-outline-light mt-3"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i class="bi bi-file-earmark-person"></i> Ver mi CV
-          </a>
+          <!-- Botón Ver mi CV -->
+          <div class="d-flex justify-content-center">
+            <a
+              href="https://noeliagonzalez2311.github.io/C8S_CV/"
+              class="btn-outline theme-inverse"
+              target="_blank"
+            >
+              <i class="fa-solid fa-download me-2"></i>Ver mi CV
+            </a>
+          </div>
         </div>
       </section>
 
-      <section id="contacto" class="container py-5">
-        <h2 class="fw-bold text-center">CONTACTAME</h2>
+      <!-- Sección Contacto -->
+      <section id="contacto" class="bg-1 p-12">
+        <div class="container text-center">
+          <h2>Contacto</h2>
 
-        <div
-          class="d-flex justify-content-center align-items-center gap-3 my-3"
-        >
-          <span class="linea linea-oscura"></span>
-          <span class="estrella estrella-oscura">★</span>
-          <span class="linea linea-oscura"></span>
+          <!-- Separador estrella -->
+          <div
+            class="d-flex gap-3 align-items-center justify-content-center py-4"
+          >
+            <div class="line"></div>
+            <i class="fa-solid fa-star fs-4"></i>
+            <div class="line"></div>
+          </div>
+
+          <!-- Formulario -->
+          <div class="row justify-content-center">
+            <div style="width: 100%; max-width: 600px">
+              <form class="text-start">
+                <div class="mb-3 text-start">
+                  <label for="nombre" class="form-label mb-2 text-white-50"
+                    >Nombre Completo</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control border-0 border-bottom rounded-0 bg-transparent text-white"
+                    id="nombre"
+                  />
+                </div>
+
+                <div class="mb-3 text-start">
+                  <label for="email" class="form-label text-white-50"
+                    >Email</label
+                  >
+                  <input
+                    type="email"
+                    class="form-control border-0 border-bottom rounded-0 bg-transparent text-white"
+                    id="email"
+                  />
+                </div>
+
+                <div class="mb-3 text-start">
+                  <label for="telefono" class="form-label text-white-50"
+                    >Número de Teléfono</label
+                  >
+                  <input
+                    type="tel"
+                    class="form-control border-0 border-bottom rounded-0 bg-transparent text-white"
+                    id="telefono"
+                  />
+                </div>
+
+                <div class="mb-4 text-start">
+                  <label for="mensaje" class="form-label text-white-50"
+                    >Mensaje</label
+                  >
+                  <textarea
+                    class="form-control border-0 border-bottom rounded-0 bg-transparent text-white"
+                    id="mensaje"
+                    rows="3"
+                  ></textarea>
+                </div>
+
+                <div class="text-start">
+                  <button type="submit" class="btn-solid theme-inverse">
+                    Enviar
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
-
-        <form class="formulario-contacto mx-auto mt-4">
-          <div class="mb-3">
-            <label for="nombre" class="form-label">Nombre Completo</label>
-            <input type="text" class="form-control" id="nombre" required />
-          </div>
-
-          <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="email" required />
-          </div>
-
-          <div class="mb-3">
-            <label for="telefono" class="form-label">Número de Teléfono</label>
-            <input type="tel" class="form-control" id="telefono" />
-          </div>
-
-          <div class="mb-3">
-            <label for="mensaje" class="form-label">Mensaje</label>
-            <textarea
-              class="form-control"
-              id="mensaje"
-              rows="4"
-              required
-            ></textarea>
-          </div>
-
-          <button type="button" class="btn btn-secondary" disabled>Send</button>
-        </form>
       </section>
     </main>
 
-    <footer>
-      <div class="pie-principal text-white py-5">
-        <div class="container">
-          <div class="row text-center g-4">
-            <div class="col-12 col-md-4">
-              <h5>MI LUGAR</h5>
-              <p>Santa Rosa, La Pampa<br />Argentina</p>
-            </div>
-
-            <div class="col-12 col-md-4">
-              <h5>SIGAMOS CONECTADOS</h5>
-
-              <div class="d-flex justify-content-center gap-2">
-                <a href="#" class="red-social" aria-label="Facebook">
-                  <i class="bi bi-facebook"></i>
-                </a>
-
-                <a href="#" class="red-social" aria-label="Instagram">
-                  <i class="bi bi-instagram"></i>
-                </a>
-
-                <a href="#" class="red-social" aria-label="LinkedIn">
-                  <i class="bi bi-linkedin"></i>
-                </a>
-
-                <a
-                  href="https://github.com/NoeliaGonzalez2311"
-                  class="red-social"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="GitHub"
-                >
-                  <i class="bi bi-github"></i>
-                </a>
-              </div>
-            </div>
-
-            <div class="col-12 col-md-4">
-              <h5>SOBRE MÍ</h5>
-              <p>
-                Soy una persona creativa, emprendedora y con muchas ganas de
-                seguir aprendiendo sobre diseño y desarrollo web.
-              </p>
+    <!-- Footer -->
+    <footer class="bg-primary py-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="lg:col-4 text-center">
+            <div>
+              <h3>Mi lugar</h3>
+              <p>Calle N</p>
+              <p>Ciudad, Estado CP</p>
             </div>
           </div>
-        </div>
-      </div>
 
-      <div class="pie-inferior text-white text-center py-3">
-        <small>Copyright © Noelia Gonzalez 2026</small>
+          <div class="redes lg:col-4 text-center">
+            <h3>Sigamos conectados</h3>
+
+            <!-- Redes sociales -->
+            <div
+              class="d-flex gap-3 justify-content-center align-items-center py-4"
+            >
+              <a
+                class="social text-white text-decoration-none border border-2 border-white rounded-circle p-5 d-flex align-items-center justify-content-center"
+                href="#"
+                target="_blank"
+              >
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+
+              <a
+                class="social text-white text-decoration-none border border-2 border-white rounded-circle p-5 d-flex align-items-center justify-content-center"
+                href="#"
+                target="_blank"
+              >
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+
+              <a
+                class="social text-white text-decoration-none border border-2 border-white rounded-circle p-5 d-flex align-items-center justify-content-center"
+                href="#"
+                target="_blank"
+              >
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+
+              <a
+                class="social text-white text-decoration-none border border-2 border-white rounded-circle p-5 d-flex align-items-center justify-content-center"
+                href="#"
+                target="_blank"
+              >
+                <i class="fa-brands fa-github"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="lg:col-4 text-center">
+            <h3>Sobre mi</h3>
+            <p>
+              Soy una persona creativa y con ansias de aprender. Tengo
+              conocimientos de HTML, CSS y Bootstrap.
+            </p>
+          </div>
+        </div>
       </div>
     </footer>
 
-    <div
-      class="modal fade"
-      id="modalLemonPie"
-      tabindex="-1"
-      aria-labelledby="tituloLemonPie"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h2 class="modal-title" id="tituloLemonPie">Lemon Pie</h2>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Cerrar"
-            ></button>
-          </div>
-
-          <div class="modal-body text-center">
-            <img
-              src="img/lemon-pie.jpeg"
-              class="imagen-modal mb-4"
-              alt="Lemon Pie"
-            />
-            <p>Proyecto Lemon Pie realizado en el Taller de Diseño Web.</p>
-          </div>
-
-          <div class="modal-footer">
-            <a
-              href="https://github.com/NoeliaGonzalez2311/C5S"
-              class="btn btn-secondary"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Ver código
-            </a>
-
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Cerrar
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div
-      class="modal fade"
-      id="modalBatman"
-      tabindex="-1"
-      aria-labelledby="tituloBatman"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h2 class="modal-title" id="tituloBatman">CV Batman</h2>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Cerrar"
-            ></button>
-          </div>
-
-          <div class="modal-body text-center">
-            <img
-              src="img/CVBatman.png"
-              class="imagen-modal mb-4"
-              alt="CV Batman"
-            />
-            <p>Proyecto de currículum de Batman realizado con HTML y CSS.</p>
-          </div>
-
-          <div class="modal-footer">
-            <a
-              href="https://github.com/NoeliaGonzalez2311/C7S"
-              class="btn btn-secondary"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Ver código
-            </a>
-
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Cerrar
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div
-      class="modal fade"
-      id="modalSupers"
-      tabindex="-1"
-      aria-labelledby="tituloSupers"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h2 class="modal-title" id="tituloSupers">Súpers</h2>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Cerrar"
-            ></button>
-          </div>
-
-          <div class="modal-body text-center">
-            <img src="img/super.png" class="imagen-modal mb-4" alt="Súpers" />
-            <p>
-              Proyecto de tarjetas de superhéroes desarrollado en el Taller de
-              Diseño Web.
-            </p>
-          </div>
-
-          <div class="modal-footer">
-            <a
-              href="https://github.com/NoeliaGonzalez2311/C9S"
-              class="btn btn-secondary"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Ver código
-            </a>
-
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Cerrar
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div
-      class="modal fade"
-      id="modalPetShop"
-      tabindex="-1"
-      aria-labelledby="tituloPetShop"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h2 class="modal-title" id="tituloPetShop">Pet Shop</h2>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Cerrar"
-            ></button>
-          </div>
-
-          <div class="modal-body text-center">
-            <img
-              src="img/petshop.jpeg"
-              class="imagen-modal mb-4"
-              alt="Pet Shop"
-            />
-            <p>Proyecto de página web para una tienda de mascotas.</p>
-          </div>
-
-          <div class="modal-footer">
-            <a
-              href="https://github.com/NoeliaGonzalez2311/Petshop_Integrador"
-              class="btn btn-secondary"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Ver código
-            </a>
-
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Cerrar
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div
-      class="modal fade"
-      id="modalPizzeria"
-      tabindex="-1"
-      aria-labelledby="tituloPizzeria"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h2 class="modal-title" id="tituloPizzeria">Pizzería</h2>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Cerrar"
-            ></button>
-          </div>
-
-          <div class="modal-body text-center">
-            <img src="img/piza.jpeg" class="imagen-modal mb-4" alt="Pizzería" />
-            <p>Proyecto de maquetación de una página web para una pizzería.</p>
-          </div>
-
-          <div class="modal-footer">
-            <a
-              href="https://github.com/NoeliaGonzalez2311/C14S---copia"
-              class="btn btn-secondary"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Ver código
-            </a>
-
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Cerrar
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div
-      class="modal fade"
-      id="modalGameShop"
-      tabindex="-1"
-      aria-labelledby="tituloGameShop"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h2 class="modal-title" id="tituloGameShop">Game Shop</h2>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Cerrar"
-            ></button>
-          </div>
-
-          <div class="modal-body text-center">
-            <img
-              src="img/gameshop.jpeg"
-              class="imagen-modal mb-4"
-              alt="Game Shop"
-            />
-            <p>
-              Proyecto de ejemplo del boceto del profesor, pendiente de
-              realización.
-            </p>
-          </div>
-
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Cerrar
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Script de Bootstrap -->
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js"
+    ></script>
   </body>
 </html>
